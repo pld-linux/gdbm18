@@ -2,9 +2,11 @@ Summary:	GNU database library for C
 Summary(de):	GNU-Datenbank-Library fЭr C
 Summary(fr):	La librairie GNU de bases de donnИes pout le langage C
 Summary(pl):	Biblioteka GNU bazy danych dla jЙzyka C
+Summary(ru):	Библиотека базы данных GNU для C
+Summary(uk):	Б╕бл╕отека бази даних GNU для C
 Name:		gdbm
 Version:	1.8.0
-Release:	15
+Release:	16
 License:	GPL
 Group:		Libraries
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
@@ -15,8 +17,8 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	texinfo
-Obsoletes:	libgdbm1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	libgdbm2
 
 %description
 Gdbm is a GNU database indexing library, including routines which use
@@ -47,15 +49,29 @@ gdbm bir veri tabanЩ dizinleme kitaplЩПЩdЩr. C uygulamalarЩ yazЩp
 basit ve etkin bir Чekilde veri tabanЩna ulaЧmak isteyenler iГin
 yararlЩ olacaktЩr.
 
+%description -l ru
+Это библиотека для работы с индексированной базой данных. Полезна для
+тех, кто разрабатывает программы на C и кому нужен доступ к простой и
+эффективной базе данных либо требуется написать программу, которая ее
+использует.
+
+%description -l uk
+Це б╕бл╕отека для роботи з ╕ндексованою базою даних. Корисна для тих,
+хто розробля╓ програми на C ╕ кому потр╕бен доступ до просто╖ та
+ефективно╖ бази даних або потр╕бно написати програму, що ╖╖
+використову╓.
+
 %package devel
 Summary:	development libraries and header files for gdbm
 Summary(de):	Entwicklungs-Libraries und Header-Dateien fЭr gdbm
 Summary(fr):	BibliothХques de dИveloppement et en-tЙtes pour gdbm
 Summary(pl):	Biblioteki i pliki nagЁСwkowe dla gdbm
 Summary(tr):	gdbm iГin baЧlЩk dosyalarЩ ve geliЧtirme kitaplЩklarЩ
+Summary(ru):	Библиотека и хедеры gdbm для разработчиков
+Summary(uk):	Б╕бл╕отека та хедери gdbm для програм╕ст╕в
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
-Obsoletes:	libgdbm1-devel
+Obsoletes:	libgdbm2-devel
 
 %description devel
 These are the development libraries and header files for gdbm, the GNU
@@ -80,9 +96,20 @@ bazy danych GNU.
 GNU veri tabanЩ sistemi gdbm ile program geliЧtirmek iГin gereken
 baЧlЩk dosyalarЩ ve kitaplЩklar.
 
+%description devel -l ru
+Это библиотека для разработчиков и хедеры gdbm, базы данных GNU. Они
+нужны, если вы собираетесь разрабатывать программы с использованием
+gdbm.
+
+%description devel -l uk
+Це б╕бл╕отека для програм╕ст╕в та хедери gdbm, бази даних GNU. Вони
+потр╕бн╕, якщо ви збира╓тесь розробляти програми з використанням gdbm.
+
 %package static
 Summary:	Static gdbm library
 Summary(pl):	Biblioteki statyczne gdbm
+Summary(uk):	Статична б╕бл╕отека gdbm
+Summary(ru):	Статическая библиотека gdbm
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
@@ -91,6 +118,12 @@ Static gdbm library.
 
 %description static -l pl
 Biblioteka statyczna gdbm.
+
+%description static -l ru
+Это статическая библиотека gdbm, базы данных GNU.
+
+%description static -l uk
+Це статична б╕бл╕отека gdbm, бази даних GNU.
 
 %prep
 %setup  -q
