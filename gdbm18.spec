@@ -21,9 +21,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgdbm2
 
 %description
-Gdbm is a GNU database indexing library, including routines which use
-extensible hashing. Gdbm works in a similar way to standard UNIX dbm
-routines. Gdbm is useful for developers who write C applications and
+gdbm is a GNU database indexing library, including routines which use
+extensible hashing. gdbm works in a similar way to standard UNIX dbm
+routines. gdbm is useful for developers who write C applications and
 need access to a simple and efficient database or who are building C
 applications which will use such a database.
 
