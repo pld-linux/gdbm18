@@ -109,9 +109,9 @@ install -d $RPM_BUILD_ROOT/usr/{lib,include,info,man/man3}
 
 make install prefix=$RPM_BUILD_ROOT/usr
 
-ln -sf libgdbm.so.2.0.0 $RPM_BUILD_ROOT/usr/lib/libgdbm.so
+ln -sf libgdbm.so.2.0.0 $RPM_BUILD_ROOT%{_libdir}/libgdbm.so
 
-strip --strip-unneeded $RPM_BUILD_ROOT/usr/lib/lib*.so.*.*
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 gzip -fn9 $RPM_BUILD_ROOT/usr/{info/gdbm*info*,man/man3/*}
 
@@ -132,18 +132,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) /usr/lib/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) /usr/lib/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.so
 %{_mandir}/man3/*
 /usr/include/*
 %{_infodir}/gdbm*
 
 %files static
 %defattr(644,root,root,755)
-/usr/lib/lib*.a
+%{_libdir}/lib*.a
 
 %changelog
 * Thu Apr 29 1999 Artur Frysiak <wiget@pld.org.pl>
