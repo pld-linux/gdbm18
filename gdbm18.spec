@@ -10,7 +10,7 @@ Release:	3
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/pub/gnu/gdbm/%{name}-%{version}.tar.gz
-# Source0-md5: 1d1b1d5c0245b1c00aff92da751e9aa1
+# Source0-md5:	1d1b1d5c0245b1c00aff92da751e9aa1
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-jbj.patch
 BuildRequires:	autoconf
