@@ -153,54 +153,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.a
 
 %changelog
-* Thu Apr 29 1999 Artur Frysiak <wiget@pld.org.pl>
-  [1.7.3-22]
-- used %%configure macro
-- added gdbm-configure.patch
-
-* Sun Mar 14 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.7.3-21]
-- added --strip-unneeded parameter on striping shared libraries,
-- removed man group from man pages.
-
-* Mon Jan 04 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.7.3-20]
-- standarized {un}registering info pages (added gdbm-info.patch),
-- added gzipping man pages.
-
-* Sun Nov 22 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.7.3-19]
-- removed "Prereq: /sbin/install-info" from static,
-- fixed --entry text on {un}registering info page for ed in %post
-  %preun in devel.
-
-* Wed Sep 30 1998 Wojtek 奸usarczyk <wojtek@shadow.eu.org>
-- build against glibc-2.1,
-- translation modified for pl.
-
-* Sun Aug 30 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.7.3-18]
-- added -q %setup parameter,
-- changed Buildroot to /tmp/%%{name}-%%{version}-root,
-- added using %%{name} and %%{version} in Source,
-- added static subpackage,
-- changed dependencies to "Requires: %%{name} = %%{version}" in devel
-  subpackage,
-- added stripping shared libraries,
-- added %attr and %defattr macros in %files (allows build package from
-  non-root account).
-
-* Thu May 07 1998 Prospector System <bugs@redhat.com>
-- translations modified for de, fr, tr
-
-* Thu Apr 30 1998 Cristian Gafton <gafton@redhat.com>
-- gdbm-devel moved to Development/Libraries
-
-* Wed Apr 08 1998 Cristian Gafton <gafton@redhat.com>
-- buildroot and built for Manhattan
-
-* Tue Oct 14 1997 Donnie Barnes <djb@redhat.com>
-- spec file cleanups
-
-* Thu Jun 12 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
+* Thu May 20 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
+  [1.8.0-1]
+- spec based on version from RH,
+- rewrited by me and Artur Frysiak <wiget@pld.org.pl>,
+- pl translation by Wojtek 奸usarczyk <wojtek@shadow.eu.org>.
