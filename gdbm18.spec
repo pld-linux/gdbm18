@@ -4,7 +4,7 @@ Summary(fr):	La librairie GNU de bases de données pout le langage C.
 Summary(pl):	GNU biblioteka bazy danych la jêzyka C
 Name:		gdbm
 Version:	1.7.3
-Release:	21
+Release:	22
 Copyright:	GPL
 Group:		Libraries
 Group(pl):	Biblioteki
