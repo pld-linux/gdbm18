@@ -5,14 +5,13 @@ Summary(pl):	Biblioteka GNU bazy danych dla jЙzyka C
 Summary(ru):	Библиотека базы данных GNU для C
 Summary(uk):	Б╕бл╕отека бази даних GNU для C
 Name:		gdbm
-Version:	1.8.0
-Release:	16
+Version:	1.8.3
+Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/pub/gnu/gdbm/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
-Patch1:		%{name}-DESTDIR.patch
-Patch2:		%{name}-jbj.patch
+Patch1:		%{name}-jbj.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -129,7 +128,6 @@ Biblioteka statyczna gdbm.
 %setup  -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -138,28 +136,14 @@ Biblioteka statyczna gdbm.
 %{__autoconf}
 %configure
 
-%{__make} CFLAGS="%{rpmcflags}"
-
-makeinfo gdbm.texinfo
-
-cat .libs/libgdbm.lai|sed -e 's/\/usr\/local\/lib/\/usr\/lib/'>libgdbm.lai.tmp
-mv libgdbm.lai.tmp .libs/libgdbm.lai
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}} \
-	   $RPM_BUILD_ROOT{%{_mandir}/man3,%{_infodir}}
 
 %{__make} install install-compat \
-	prefix=%{_prefix} \
-	exec_prefix=%{_exec_prefix} \
-	binprefix=%{_exec_prefix} \
-	manprefix=%{_prefix} \
-	libdir=%{_libdir} \
-	includedir=%{_includedir} \
-	infodir=%{_infodir} \
-	man3dir=%{_mandir}/man3 \
-	DESTDIR=$RPM_BUILD_ROOT
+	INSTALL_ROOT=$RPM_BUILD_ROOT \
+	BINOWN=`id -u` BINGRP=`id -g`
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -175,6 +159,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
