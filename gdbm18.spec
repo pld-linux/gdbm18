@@ -53,7 +53,6 @@ Summary(tr):	gdbm için baþlýk dosyalarý ve geliþtirme kitaplýklarý
 Group:		Development/Libraries
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
-Prereq:		/usr/sbin/fix-info-dir
 
 %description devel
 These are the development libraries and header files for gdbm, the
@@ -128,12 +127,12 @@ gzip -fn9 $RPM_BUILD_ROOT{%{_infodir}/gdbm*info*,%{_mandir}/man3/*}
 %post -p /sbin/ldconfig
 
 %post devel
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun -p /sbin/ldconfig
 
 %postun devel
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
