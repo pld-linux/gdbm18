@@ -4,7 +4,7 @@ Summary(fr):	La librairie GNU de bases de données pout le langage C.
 Summary(pl):	GNU biblioteka bazy danych la jêzyka C
 Name:		gdbm
 Version:	1.8.0
-Release:	2
+Release:	3
 Copyright:	GPL
 Group:		Libraries
 Group(pl):	Biblioteki
@@ -128,7 +128,7 @@ gzip -fn9 $RPM_BUILD_ROOT{%{_infodir}/gdbm*info*,%{_mandir}/man3/*}
 
 %postun -p /sbin/ldconfig
 
-%preun devel
+%postun devel
 /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
