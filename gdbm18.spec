@@ -90,15 +90,21 @@ Static gdbm library.
 mkdir shared
 
 %build
-./configure --prefix=/usr
-make
-make shared
+CFLAGS="$RPM_OPT_FLAGS" \
+./configure \
+	--prefix=/usr
+
+make CFLAGS="$RPM_OPT_FLAGS"
+make CFLAGS="$RPM_OPT_FLAGS" shared
+
 makeinfo gdbm.texinfo
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/usr/{lib,include,info,man/man3}
+
 make install prefix=$RPM_BUILD_ROOT/usr
+
 ln -sf libgdbm.so.2.0.0 $RPM_BUILD_ROOT/usr/lib/libgdbm.so
 
 strip --strip-unneeded $RPM_BUILD_ROOT/usr/lib/lib*.so.*.*
@@ -139,10 +145,6 @@ rm -rf $RPM_BUILD_ROOT
 - added --strip-unneeded parameter on striping shared libraries,
 - removed man group from man pages.
 
-* Wed Sep 30 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-- build against glibc-2.1,
-- translation modified for pl.
-
 * Mon Jan 04 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.7.3-20]
 - standarized {un}registering info pages (added gdbm-info.patch),
@@ -153,6 +155,10 @@ rm -rf $RPM_BUILD_ROOT
 - removed "Prereq: /sbin/install-info" from static,
 - fixed --entry text on {un}registering info page for ed in %post
   %preun in devel.
+
+* Wed Sep 30 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
+- build against glibc-2.1,
+- translation modified for pl.
 
 * Sun Aug 30 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.7.3-18]
