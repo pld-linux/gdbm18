@@ -9,7 +9,7 @@ diff -Nru gdbm-1.7.3/gdbm.texinfo gdbm-1.7.3.new/gdbm.texinfo
 +@format
 +@dircategory Libraries:
 +@direntry
-+* gdbm: (gdbm)				The GNU Database library
++* gdbm: (gdbm).				The GNU Database library
 +@end direntry
 +@end format
 +@end ifinfo
