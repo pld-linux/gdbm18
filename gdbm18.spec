@@ -132,7 +132,7 @@ Biblioteka statyczna gdbm.
 %patch2 -p1
 
 %build
-libtoolize --copy --force
+%{__libtoolize}
 aclocal
 autoheader
 %{__autoconf}
