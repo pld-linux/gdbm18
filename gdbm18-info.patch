@@ -1,23 +1,14 @@
-diff -Nru gdbm-1.7.3/gdbm.texinfo gdbm-1.7.3.new/gdbm.texinfo
---- gdbm-1.7.3/gdbm.texinfo	Fri May 20 00:14:11 1994
-+++ gdbm-1.7.3.new/gdbm.texinfo	Tue Jan  5 04:13:45 1999
-@@ -79,8 +79,19 @@
- @end titlepage
- @page
- 
-+@ifinfo
-+@format
+--- gdbm-1.8.3/gdbm.texinfo.orig	Tue Oct 15 23:59:38 2002
++++ gdbm-1.8.3/gdbm.texinfo	Tue Dec 24 23:43:32 2002
+@@ -2,9 +2,9 @@
+ @comment %**start of header (This is for running Texinfo on a region.)
+ @setfilename gdbm.info
+ @settitle gdbm
+-@dircategory Programming & development tools
 +@dircategory Libraries:
-+@direntry
-+* gdbm: (gdbm).				The GNU Database library
-+@end direntry
-+@end format
-+@end ifinfo
-+
- @node Top, Copying, (dir), (dir)
- @ifinfo
-+@top GNU dbm
-+
- GNU @code{dbm} is a library of functions implementing a hashed database
- on a disk file.  This manual documents GNU @code{dbm} Version 1.7.1
- (@code{gdbm}).  The software was written by Philip A. Nelson. This
+ @direntry
+-* GDBM: (gdbm).			The GNU database manager.
++* GDBM: (gdbm).				The GNU database manager
+ @end direntry
+ @c @setchapternewpage odd
+ @comment %**end of header (This is for running Texinfo on a region.)
