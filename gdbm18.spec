@@ -14,7 +14,7 @@ Patch1:		gdbm-DESTDIR.patch
 Patch2:		gdbm-jbj.patch
 BuildRequires:	libtool
 BuildRequires:	autoconf
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Gdbm is a GNU database indexing library, including routines which use
