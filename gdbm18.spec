@@ -1,7 +1,7 @@
 Summary:	GNU database library for C
 Summary(de):	GNU-Datenbank-Library für C
 Summary(fr):	La librairie GNU de bases de données pout le langage C
-Summary(pl):	GNU biblioteka bazy danych la jêzyka C
+Summary(pl):	Biblioteka GNU bazy danych dla jêzyka C
 Name:		gdbm
 Version:	1.8.0
 Release:	11
@@ -11,11 +11,15 @@ Group(de):	Libraries
 Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
+Group(pt_BR):	Bibliotecas
+Group(ru):	âÉÂÌÉÏÔÅËÉ
+Group(uk):	â¦ÂÌ¦ÏÔÅËÉ
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-DESTDIR.patch
 Patch2:		%{name}-jbj.patch
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,7 +44,7 @@ une application en C qui l'utilise.
 
 %description -l pl
 W pakiecie znajduje siê biblioteka indeksowania bazy danych.
-Biblioteka ta jest szczególnie uzyteczna dla ludzi, którzy pisz±
+Biblioteka ta jest szczególnie u¿yteczna dla ludzi, którzy pisz±
 oprogramowanie w C i potrzebuj± prostej i szybkiej bazy danych, lub
 dla tych którzy pisz± programy w C z wykorzystaniem tej biblioteki.
 
@@ -57,8 +61,12 @@ Summary(pl):	Biblioteki i pliki nag³ówkowe dla gdbm
 Summary(tr):	gdbm için baþlýk dosyalarý ve geliþtirme kitaplýklarý
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name} = %{version}
 
 %description devel
@@ -77,8 +85,8 @@ gdbm, le système de base de données GNU. Ceci est nécessaire si vous
 désirez développer en utilisant la base de données gdbm.
 
 %description -l pl devel
-W pakiecie tym znajduj± siê pliki nag³ówkowe i biblioteki dla GNU
-systemu bazy danych.
+W pakiecie tym znajduj± siê pliki nag³ówkowe i biblioteki dla systemu
+bazy danych GNU.
 
 %description -l tr devel
 GNU veri tabaný sistemi gdbm ile program geliþtirmek için gereken
@@ -89,12 +97,19 @@ Summary:	Static gdbm library
 Summary(pl):	Biblioteki statyczne gdbm
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name}-devel = %{version}
 
 %description static
 Static gdbm library.
+
+%description static -l pl
+Biblioteka statyczna gdbm.
 
 %prep
 %setup  -q
@@ -129,6 +144,9 @@ install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}} \
 	man3dir=%{_mandir}/man3 \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
@@ -137,9 +155,6 @@ install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}} \
 
 %postun devel
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
