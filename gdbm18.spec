@@ -133,8 +133,8 @@ Biblioteka statyczna gdbm.
 
 %build
 %{__libtoolize}
-aclocal
-autoheader
+%{__aclocal}
+%{__autoheader}
 %{__autoconf}
 %configure
 
