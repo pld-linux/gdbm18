@@ -102,17 +102,17 @@ fi
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%attr(755, roor, root) /usr/lib/lib*.so.*.*
+%attr(755, root, root) /usr/lib/lib*.so.*.*
 
 %files devel
-%defattr(644, roor, root, 755)
+%defattr(644, root, root, 755)
 /usr/lib/lib*.so
-%attr(644, roor,  man) /usr/man/man3/*
+%attr(644, root,  man) /usr/man/man3/*
 /usr/include/*
 /usr/info/gdbm*
 
 %files static
-%attr(644, roor, root) /usr/lib/lib*.a
+%attr(644, root, root) /usr/lib/lib*.a
 
 %changelog
 * Sun Aug 30 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
