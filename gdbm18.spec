@@ -118,13 +118,13 @@ gzip -fn9 $RPM_BUILD_ROOT/usr/{info/gdbm*info*,man/man3/*}
 %post -p /sbin/ldconfig
 
 %post devel
-/sbin/install-info /usr/info/gdbm.info.gz /etc/info-dir
+/sbin/install-info %{_infodir}/gdbm.info.gz /etc/info-dir
 
 %postun -p /sbin/ldconfig
 
 %preun devel
 if [ "$1" = "0" ]; then
-	/sbin/install-info --delete /usr/info/gdbm.info.gz /etc/info-dir
+	/sbin/install-info --delete %{_infodir}/gdbm.info.gz /etc/info-dir
 fi
 
 %clean
@@ -137,9 +137,9 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) /usr/lib/lib*.so
-/usr/man/man3/*
+%{_mandir}/man3/*
 /usr/include/*
-/usr/info/gdbm*
+%{_infodir}/gdbm*
 
 %files static
 %defattr(644,root,root,755)
