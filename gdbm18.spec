@@ -9,7 +9,8 @@ Version:	1.8.0
 Release:	16
 License:	GPL
 Group:		Libraries
-Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	cd543862287f55ad66e62cc9d82cc906
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-DESTDIR.patch
 Patch2:		%{name}-jbj.patch
