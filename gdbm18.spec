@@ -4,7 +4,7 @@ Summary(fr):	La librairie GNU de bases de données pout le langage C
 Summary(pl):	Biblioteka GNU bazy danych dla jêzyka C
 Name:		gdbm
 Version:	1.8.0
-Release:	12
+Release:	14
 License:	GPL
 Group:		Libraries
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
@@ -15,6 +15,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	texinfo
+Obsoletes:	libgdbm1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -54,6 +55,7 @@ Summary(pl):	Biblioteki i pliki nag³ówkowe dla gdbm
 Summary(tr):	gdbm için baþlýk dosyalarý ve geliþtirme kitaplýklarý
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
+Obsoletes:	libgdbm1-devel
 
 %description devel
 These are the development libraries and header files for gdbm, the GNU
