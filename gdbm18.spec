@@ -11,8 +11,8 @@ Group(pl):	Biblioteki
 Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Patch0:		gdbm-info.patch
 Patch1:		gdbm-DESTDIR.patch
-BuildPrereq:	libtool
-BuildPrereq:	autoconf
+BuildRequires:	libtool
+BuildRequires:	autoconf
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
