@@ -3,16 +3,16 @@ Summary(de):	GNU-Datenbank-Library für C
 Summary(fr):	La librairie GNU de bases de données pout le langage C.
 Summary(pl):	GNU biblioteka bazy danych la jêzyka C
 Name:		gdbm
-Version:	1.7.3
-Release:	22
+Version:	1.8.0
+Release:	1
 Copyright:	GPL
 Group:		Libraries
 Group(pl):	Biblioteki
 Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
-Patch0:		gdbm-shlib.patch
-Patch1:		gdbm-info.patch
-Patch2:		gdbm-configure.patch
-Patch3:		gdbm-DESTDIR.patch
+Patch0:		gdbm-info.patch
+Patch1:		gdbm-DESTDIR.patch
+BuildPrereq:	libtool
+BuildPrereq:	autoconf
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -89,19 +89,15 @@ Static gdbm library.
 %setup  -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p1
 
 %build
-mkdir shared
+libtoolize --copy --force
 aclocal
 autoheader
-automake --add-missing || :
 autoconf
 %configure
 
 make CFLAGS="$RPM_OPT_FLAGS"
-make CFLAGS="$RPM_OPT_FLAGS" shared
 
 makeinfo gdbm.texinfo
 
@@ -120,8 +116,6 @@ make install \
 	infodir=%{_infodir} \
 	man3dir=%{_mandir}/man3 \
 	DESTDIR=$RPM_BUILD_ROOT
-
-ln -sf libgdbm.so.2.0.0 $RPM_BUILD_ROOT%{_libdir}/libgdbm.so
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
@@ -149,6 +143,7 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
 %{_mandir}/man3/*
 %{_includedir}/*
 %{_infodir}/gdbm*
