@@ -104,7 +104,7 @@ autoheader
 autoconf
 %configure
 
-make CFLAGS="$RPM_OPT_FLAGS"
+%{__make} CFLAGS="$RPM_OPT_FLAGS"
 
 makeinfo gdbm.texinfo
 
@@ -113,7 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}} \
 	   $RPM_BUILD_ROOT{%{_mandir}/man3,%{_infodir}}
 
-make install \
+%{__make} install \
 	prefix=%{_prefix} \
 	exec_prefix=%{_exec_prefix} \
 	binprefix=%{_exec_prefix} \
