@@ -3,11 +3,13 @@ Summary(de): GNU-Datenbank-Library für C
 Summary(fr): La librairie GNU de bases de données pout le langage C.
 Name:        gdbm
 Version:     1.7.3
-Release:     19
-Source:      ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
-Patch:       gdbm-1.7.3-shlib.patch
+Release:     20
 Copyright:   GPL
 Group:       Libraries
+Group(pl):   Biblioteki
+Source:      ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
+Patch0:      gdbm-shlib.patch
+Patch1:      gdbm-info.patch
 Buildroot:   /tmp/%{name}-%{version}-root
 
 %description
@@ -62,41 +64,42 @@ etkin bir þekilde veri tabanýna ulaþmak isteyenler için yararlý olacaktýr.
 Summary:     static gdbm library
 Group:       Development/Libraries
 Requires:    %{name}-devel = %{version}
-Prereq:      /sbin/install-info
 
 %description static
 Static gdbm library.
 
 %prep
 %setup -q
-%patch -p1 -b .shared
+%patch0 -p1
+%patch1 -p1
 mkdir shared
 
 %build
 ./configure --prefix=/usr
-make RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
-make RPM_OPT_FLAGS="$RPM_OPT_FLAGS" shared
+make
+make shared
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/usr/{lib,include,info,man/man3}
+install -d $RPM_BUILD_ROOT/usr/{lib,include,info,man/man3}
 make install prefix=$RPM_BUILD_ROOT/usr
-gzip -fn9 $RPM_BUILD_ROOT/usr/info/gdbm*info*
 ln -sf libgdbm.so.2.0.0 $RPM_BUILD_ROOT/usr/lib/libgdbm.so
 
 strip $RPM_BUILD_ROOT/usr/lib/lib*.so.*.*
 
+gzip -fn9 $RPM_BUILD_ROOT/usr/{info/gdbm*info*,man/man3/*}
+
 %post -p /sbin/ldconfig
 
 %post devel
-/sbin/install-info /usr/info/gdbm.info.gz /usr/info/dir --entry \
-"* gdbm: (gdbm).                                 The GNU Database."
+/sbin/install-info /usr/info/gdbm.info.gz /etc/info-dir
 
 %postun -p /sbin/ldconfig
 
 %preun devel
-/sbin/install-info --delete /usr/info/gdbm.info.gz /usr/info/dir --entry \
-"* gdbm: (gdbm).                                 The GNU Database."
+if [ $1 = 0 ]; then
+	/sbin/install-info --delete /usr/info/gdbm.info.gz /etc/info-dir
+fi
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -115,6 +118,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644, root, root) /usr/lib/lib*.a
 
 %changelog
+* Mon Jan 04 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.7.3-20]
+- standarized {un}registering info pages (added gdbm-info.patch),
+- added gzipping man pages.
+
 * Sun Nov 22 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.7.3-19]
 - removed "Prereq: /sbin/install-info" from static,
