@@ -1,0 +1,23 @@
+diff -Nru gdbm-1.7.3/gdbm.texinfo gdbm-1.7.3.new/gdbm.texinfo
+--- gdbm-1.7.3/gdbm.texinfo	Fri May 20 00:14:11 1994
++++ gdbm-1.7.3.new/gdbm.texinfo	Tue Jan  5 04:13:45 1999
+@@ -79,8 +79,19 @@
+ @end titlepage
+ @page
+ 
++@ifinfo
++@format
++@dircategory Libraries:
++@direntry
++* gdbm: (gdbm)				The GNU Database library
++@end direntry
++@end format
++@end ifinfo
++
+ @node Top, Copying, (dir), (dir)
+ @ifinfo
++@top GNU dbm
++
+ GNU @code{dbm} is a library of functions implementing a hashed database
+ on a disk file.  This manual documents GNU @code{dbm} Version 1.7.1
+ (@code{gdbm}).  The software was written by Philip A. Nelson. This
