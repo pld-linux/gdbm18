@@ -3,7 +3,7 @@ Summary(de): GNU-Datenbank-Library für C
 Summary(fr): La librairie GNU de bases de données pout le langage C.
 Name:        gdbm
 Version:     1.7.3
-Release:     18
+Release:     19
 Source:      ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Patch:       gdbm-1.7.3-shlib.patch
 Copyright:   GPL
@@ -89,14 +89,14 @@ strip $RPM_BUILD_ROOT/usr/lib/lib*.so.*.*
 %post -p /sbin/ldconfig
 
 %post devel
-/sbin/install-info /usr/info/gdbm.info.gz /usr/info/dir --entry="* gdbm: (gdbm).                   The GNU Database."
+/sbin/install-info /usr/info/gdbm.info.gz /usr/info/dir --entry \
+"* gdbm: (gdbm).                                 The GNU Database."
 
 %postun -p /sbin/ldconfig
 
 %preun devel
-if [ $1 = 0 ]; then
-   /sbin/install-info --delete /usr/info/gdbm.info.gz /usr/info/dir --entry="* gdbm: (gdbm).                   The GNU Database."
-fi
+/sbin/install-info --delete /usr/info/gdbm.info.gz /usr/info/dir --entry \
+"* gdbm: (gdbm).                                 The GNU Database."
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -115,6 +115,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644, root, root) /usr/lib/lib*.a
 
 %changelog
+* Sun Nov 22 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.7.3-19]
+- removed "Prereq: /sbin/install-info" from static,
+- fixed --entry text on {un}registering info page for ed in %post
+  %preun in devel.
+
 * Sun Aug 30 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.7.3-18]
 - added -q %setup parameter,
