@@ -127,6 +127,7 @@ fi
 rm -rf $RPM_BUILD_ROOT
 
 %files
+%defattr(644,root,root,755)
 %attr(755,root,root) /usr/lib/lib*.so.*.*
 
 %files devel
@@ -137,7 +138,8 @@ rm -rf $RPM_BUILD_ROOT
 /usr/info/gdbm*
 
 %files static
-%attr(644,root,root) /usr/lib/lib*.a
+%defattr(644,root,root,755)
+/usr/lib/lib*.a
 
 %changelog
 * Sun Mar 14 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
