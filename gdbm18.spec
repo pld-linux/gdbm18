@@ -101,7 +101,7 @@ install -d $RPM_BUILD_ROOT/usr/{lib,include,info,man/man3}
 make install prefix=$RPM_BUILD_ROOT/usr
 ln -sf libgdbm.so.2.0.0 $RPM_BUILD_ROOT/usr/lib/libgdbm.so
 
-strip $RPM_BUILD_ROOT/usr/lib/lib*.so.*.*
+strip --strip-unneeded $RPM_BUILD_ROOT/usr/lib/lib*.so.*.*
 
 gzip -fn9 $RPM_BUILD_ROOT/usr/{info/gdbm*info*,man/man3/*}
 
@@ -136,6 +136,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Sun Mar 14 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.7.3-21]
+- added --strip-unneeded parameter on striping shared libraries,
 - removed man group from man pages.
 
 * Wed Sep 30 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
