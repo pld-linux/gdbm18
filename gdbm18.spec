@@ -1,18 +1,19 @@
 Summary:	GNU database library for C
 Summary(de):	GNU-Datenbank-Library für C
-Summary(fr):	La librairie GNU de bases de données pout le langage C.
+Summary(fr):	La librairie GNU de bases de données pout le langage C
 Summary(pl):	GNU biblioteka bazy danych la jêzyka C
 Name:		gdbm
 Version:	1.8.0
-Release:	5
+Release:	6
 License:	GPL
 Group:		Libraries
+Group(de):	Libraries
 Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
-Patch0:		gdbm-info.patch
-Patch1:		gdbm-DESTDIR.patch
-Patch2:		gdbm-jbj.patch
+Patch0:		%{name}-info.patch
+Patch1:		%{name}-DESTDIR.patch
+Patch2:		%{name}-jbj.patch
 BuildRequires:	libtool
 BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -53,6 +54,7 @@ Summary(fr):	Bibliothèques de développement et en-têtes pour gdbm
 Summary(pl):	Biblioteki i pliki nag³ówkowe dla gdbm
 Summary(tr):	gdbm için baþlýk dosyalarý ve geliþtirme kitaplýklarý
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
@@ -84,6 +86,7 @@ baþlýk dosyalarý ve kitaplýklar.
 Summary:	Static gdbm library
 Summary(pl):	Biblioteki statyczne gdbm
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
@@ -104,7 +107,7 @@ autoheader
 autoconf
 %configure
 
-%{__make} CFLAGS="$RPM_OPT_FLAGS"
+%{__make} CFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g}"
 
 makeinfo gdbm.texinfo
 
@@ -124,16 +127,11 @@ install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}} \
 	man3dir=%{_mandir}/man3 \
 	DESTDIR=$RPM_BUILD_ROOT
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
-
-gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/gdbm*info*,%{_mandir}/man3/*}
-
-%post -p /sbin/ldconfig
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %post devel
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
-%postun -p /sbin/ldconfig
 
 %postun devel
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
