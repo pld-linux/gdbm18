@@ -135,7 +135,7 @@ Biblioteka statyczna gdbm.
 libtoolize --copy --force
 aclocal
 autoheader
-autoconf
+%{__autoconf}
 %configure
 
 %{__make} CFLAGS="%{rpmcflags}"
