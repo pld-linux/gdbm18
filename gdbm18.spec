@@ -78,6 +78,7 @@ mkdir shared
 ./configure --prefix=/usr
 make
 make shared
+makeinfo gdbm.texinfo
 
 %install
 rm -rf $RPM_BUILD_ROOT
