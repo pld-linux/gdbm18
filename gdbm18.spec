@@ -48,7 +48,7 @@ yararlý olacaktýr.
 
 %package devel
 Summary:	development libraries and header files for gdbm
-Summary(de):	Entwicklungs-Libraries und Header-Dateien für gdbm 
+Summary(de):	Entwicklungs-Libraries und Header-Dateien für gdbm
 Summary(fr):	Bibliothèques de développement et en-têtes pour gdbm
 Summary(pl):	Biblioteki i pliki nag³ówkowe dla gdbm
 Summary(tr):	gdbm için baþlýk dosyalarý ve geliþtirme kitaplýklarý
@@ -60,21 +60,21 @@ These are the development libraries and header files for gdbm, the GNU
 database system. These are required if you plan to do development
 using the gdbm database.
 
-%description -l de devel
+%description devel -l de
 Dies sind die Entwicklungs-Libraries und Header-Dateien für gdbm, das
 GNU-Datenbanksystem. Sie sind darauf angewiesen, wenn Sie vorhaben,
 die gdbm-Datenbank für Entwicklungsarbeiten zu benutzen.
 
-%description -l fr devel
+%description devel -l fr
 Ce sont les librairies de développement et les fichiers d'en-tête pour
 gdbm, le système de base de données GNU. Ceci est nécessaire si vous
 désirez développer en utilisant la base de données gdbm.
 
-%description -l pl devel
+%description devel -l pl
 W pakiecie tym znajduj± siê pliki nag³ówkowe i biblioteki dla systemu
 bazy danych GNU.
 
-%description -l tr devel
+%description devel -l tr
 GNU veri tabaný sistemi gdbm ile program geliþtirmek için gereken
 baþlýk dosyalarý ve kitaplýklar.
 
