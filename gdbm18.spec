@@ -4,7 +4,7 @@ Summary(fr):	La librairie GNU de bases de données pout le langage C
 Summary(pl):	GNU biblioteka bazy danych la jêzyka C
 Name:		gdbm
 Version:	1.8.0
-Release:	6
+Release:	7
 License:	GPL
 Group:		Libraries
 Group(de):	Libraries
@@ -116,7 +116,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}} \
 	   $RPM_BUILD_ROOT{%{_mandir}/man3,%{_infodir}}
 
-%{__make} install \
+%{__make} install install-compat \
 	prefix=%{_prefix} \
 	exec_prefix=%{_exec_prefix} \
 	binprefix=%{_exec_prefix} \
