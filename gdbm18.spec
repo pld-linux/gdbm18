@@ -94,6 +94,8 @@ Static gdbm library.
 mkdir shared
 aclocal
 autoheader
+automake --add-missing || :
+autoconf
 %configure
 
 make CFLAGS="$RPM_OPT_FLAGS"
