@@ -11,6 +11,7 @@ Group(pl):	Biblioteki
 Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Patch0:		gdbm-shlib.patch
 Patch1:		gdbm-info.patch
+Patch2:		gdbm-configure.patch
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -87,12 +88,13 @@ Static gdbm library.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-mkdir shared
+%patch2 -p1
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" \
-./configure \
-	--prefix=/usr
+mkdir shared
+aclocal
+autoheader
+%configure
 
 make CFLAGS="$RPM_OPT_FLAGS"
 make CFLAGS="$RPM_OPT_FLAGS" shared
@@ -142,6 +144,11 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/lib*.a
 
 %changelog
+* Thu Apr 29 1999 Artur Frysiak <wiget@pld.org.pl>
+  [1.7.3-22]
+- used %%configure macro
+- added gdbm-configure.patch
+
 * Sun Mar 14 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.7.3-21]
 - added --strip-unneeded parameter on striping shared libraries,
