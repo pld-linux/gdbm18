@@ -4,7 +4,7 @@ Summary(fr):	La librairie GNU de bases de données pout le langage C
 Summary(pl):	Biblioteka GNU bazy danych dla jêzyka C
 Name:		gdbm
 Version:	1.8.0
-Release:	14
+Release:	15
 License:	GPL
 Group:		Libraries
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
@@ -108,6 +108,9 @@ autoconf
 %{__make} CFLAGS="%{rpmcflags}"
 
 makeinfo gdbm.texinfo
+
+cat .libs/libgdbm.lai|sed -e 's/\/usr\/local\/lib/\/usr\/lib/'>libgdbm.lai.tmp
+mv libgdbm.lai.tmp .libs/libgdbm.lai
 
 %install
 rm -rf $RPM_BUILD_ROOT
