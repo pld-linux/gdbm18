@@ -6,7 +6,7 @@ Summary(ru):	Библиотека базы данных GNU для C
 Summary(uk):	Б╕бл╕отека бази даних GNU для C
 Name:		gdbm
 Version:	1.8.3
-Release:	3
+Release:	4
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/pub/gnu/gdbm/%{name}-%{version}.tar.gz
