@@ -11,14 +11,17 @@ Group(pl):	Biblioteki
 Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Patch0:		gdbm-info.patch
 Patch1:		gdbm-DESTDIR.patch
+Patch2:		gdbm-jbj.patch
 BuildRequires:	libtool
 BuildRequires:	autoconf
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
-This is a database indexing library. It is useful for those who need 
-to write C applications and need access to a simple and efficient
-database or build C applications which use it.
+Gdbm is a GNU database indexing library, including routines which use
+extensible hashing. Gdbm works in a similar way to standard UNIX dbm
+routines. Gdbm is useful for developers who write C applications and need
+access to a simple and efficient database or who are building C applications
+which will use such a database.
 
 %description -l de
 Dies ist eine Datenbank-Index-Library für Programmierer, die 
@@ -89,6 +92,7 @@ Static gdbm library.
 %setup  -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 libtoolize --copy --force
