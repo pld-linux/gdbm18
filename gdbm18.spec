@@ -107,7 +107,7 @@ autoheader
 autoconf
 %configure
 
-%{__make} CFLAGS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}"
+%{__make} CFLAGS="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"
 
 makeinfo gdbm.texinfo
 
