@@ -12,6 +12,7 @@ Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Patch0:		gdbm-shlib.patch
 Patch1:		gdbm-info.patch
 Patch2:		gdbm-configure.patch
+Patch3:		gdbm-DESTDIR.patch
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -85,10 +86,11 @@ Requires:	%{name}-devel = %{version}
 Static gdbm library.
 
 %prep
-%setup -q
+%setup  -q
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 mkdir shared
@@ -105,15 +107,25 @@ makeinfo gdbm.texinfo
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/{lib,include,info,man/man3}
+install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}} \
+	   $RPM_BUILD_ROOT{%{_mandir}/man3,%{_infodir}}
 
-make install prefix=$RPM_BUILD_ROOT/usr
+make install \
+	prefix=%{_prefix} \
+	exec_prefix=%{_exec_prefix} \
+	binprefix=%{_exec_prefix} \
+	manprefix=%{_prefix} \
+	libdir=%{_libdir} \
+	includedir=%{_includedir} \
+	infodir=%{_infodir} \
+	man3dir=%{_mandir}/man3 \
+	DESTDIR=$RPM_BUILD_ROOT
 
 ln -sf libgdbm.so.2.0.0 $RPM_BUILD_ROOT%{_libdir}/libgdbm.so
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
-gzip -fn9 $RPM_BUILD_ROOT/usr/{info/gdbm*info*,man/man3/*}
+gzip -fn9 $RPM_BUILD_ROOT{%{_infodir}/gdbm*info*,%{_mandir}/man3/*}
 
 %post -p /sbin/ldconfig
 
