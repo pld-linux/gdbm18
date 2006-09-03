@@ -17,8 +17,8 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	texinfo
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgdbm2
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 gdbm is a GNU database indexing library, including routines which use
@@ -66,11 +66,11 @@ Summary:	development libraries and header files for gdbm
 Summary(de):	Entwicklungs-Libraries und Header-Dateien fЭr gdbm
 Summary(fr):	BibliothХques de dИveloppement et en-tЙtes pour gdbm
 Summary(pl):	Biblioteki i pliki nagЁСwkowe dla gdbm
-Summary(tr):	gdbm iГin baЧlЩk dosyalarЩ ve geliЧtirme kitaplЩklarЩ
 Summary(ru):	Библиотека и хедеры gdbm для разработчиков
+Summary(tr):	gdbm iГin baЧlЩk dosyalarЩ ve geliЧtirme kitaplЩklarЩ
 Summary(uk):	Б╕бл╕отека та хедери gdbm для програм╕ст╕в
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Obsoletes:	libgdbm2-devel
 
 %description devel
@@ -108,10 +108,10 @@ gdbm.
 %package static
 Summary:	Static gdbm library
 Summary(pl):	Biblioteki statyczne gdbm
-Summary(uk):	Статична б╕бл╕отека gdbm
 Summary(ru):	Статическая библиотека gdbm
+Summary(uk):	Статична б╕бл╕отека gdbm
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static gdbm library.
