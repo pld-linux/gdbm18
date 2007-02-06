@@ -1,0 +1,11 @@
+--- gdbm-1.8.3/Makefile.in~	2007-02-06 01:33:16.000000000 +0100
++++ gdbm-1.8.3/Makefile.in	2007-02-06 01:35:16.000000000 +0100
+@@ -161,7 +161,7 @@
+ libgdbm_compat.la: $(C_LOBJS) gdbm.h
+ 	rm -f libgdbm_compat.la
+ 	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libgdbm_compat.la -rpath $(libdir) \
+-		-version-info $(SHLIB_VER) $(C_LOBJS)
++		-version-info $(SHLIB_VER) $(C_LOBJS) libgdbm.la
+ 
+ gdbm.h:	gdbm.proto gdbmerrno.h gdbm.proto2
+ 	rm -f gdbm.h
