@@ -6,7 +6,7 @@ Summary(ru):	Библиотека базы данных GNU для C
 Summary(uk):	Б╕бл╕отека бази даних GNU для C
 Name:		gdbm
 Version:	1.8.3
-Release:	6
+Release:	7
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/pub/gnu/gdbm/%{name}-%{version}.tar.gz
@@ -14,6 +14,7 @@ Source0:	ftp://ftp.gnu.org/pub/gnu/gdbm/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-jbj.patch
 Patch2:		%{name}-linking.patch
+Patch3:		%{name}-link-compat.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -131,6 +132,7 @@ Biblioteka statyczna gdbm.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__libtoolize}
