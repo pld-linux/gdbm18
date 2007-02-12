@@ -1,9 +1,9 @@
 Summary:	GNU database library for C
-Summary(de):	GNU-Datenbank-Library fЭr C
-Summary(fr):	La librairie GNU de bases de donnИes pout le langage C
-Summary(pl):	Biblioteka GNU bazy danych dla jЙzyka C
-Summary(ru):	Библиотека базы данных GNU для C
-Summary(uk):	Б╕бл╕отека бази даних GNU для C
+Summary(de.UTF-8):   GNU-Datenbank-Library fц╪r C
+Summary(fr.UTF-8):   La librairie GNU de bases de donnц╘es pout le langage C
+Summary(pl.UTF-8):   Biblioteka GNU bazy danych dla jд≥zyka C
+Summary(ru.UTF-8):   п▒п╦п╠п╩п╦п╬я┌п╣п╨п╟ п╠п╟п╥я▀ п╢п╟п╫п╫я▀я┘ GNU п╢п╩я▐ C
+Summary(uk.UTF-8):   п▒я√п╠п╩я√п╬я┌п╣п╨п╟ п╠п╟п╥п╦ п╢п╟п╫п╦я┘ GNU п╢п╩я▐ C
 Name:		gdbm
 Version:	1.8.3
 Release:	7
@@ -29,48 +29,48 @@ routines. gdbm is useful for developers who write C applications and
 need access to a simple and efficient database or who are building C
 applications which will use such a database.
 
-%description -l de
-Dies ist eine Datenbank-Index-Library fЭr Programmierer, die
-C-Anwendungen schreiben und eine einfache und leistungsfДhige
-Datenbank benЖtigen oder diese in C-Anwendungen einsetzen mЖchten.
+%description -l de.UTF-8
+Dies ist eine Datenbank-Index-Library fц╪r Programmierer, die
+C-Anwendungen schreiben und eine einfache und leistungsfц╓hige
+Datenbank benц╤tigen oder diese in C-Anwendungen einsetzen mц╤chten.
 
-%description -l fr
-Une librairie d'indexation de bases de donnИes. Elle est utile pour
-ceux qui dИsirent Иcrivent des applications en C et ont besion
-d'accИder Ю une base de donnИes simple et efficace ou de construire
+%description -l fr.UTF-8
+Une librairie d'indexation de bases de donnц╘es. Elle est utile pour
+ceux qui dц╘sirent ц╘crivent des applications en C et ont besion
+d'accц╘der ц═ une base de donnц╘es simple et efficace ou de construire
 une application en C qui l'utilise.
 
-%description -l pl
-W pakiecie znajduje siЙ biblioteka indeksowania bazy danych.
-Biblioteka ta jest szczegСlnie u©yteczna dla ludzi, ktСrzy pisz╠
-oprogramowanie w C i potrzebuj╠ prostej i szybkiej bazy danych, lub
-dla tych ktСrzy pisz╠ programy w C z wykorzystaniem tej biblioteki.
+%description -l pl.UTF-8
+W pakiecie znajduje siд≥ biblioteka indeksowania bazy danych.
+Biblioteka ta jest szczegцЁlnie uе╪yteczna dla ludzi, ktцЁrzy piszд┘
+oprogramowanie w C i potrzebujд┘ prostej i szybkiej bazy danych, lub
+dla tych ktцЁrzy piszд┘ programy w C z wykorzystaniem tej biblioteki.
 
-%description -l tr
-gdbm bir veri tabanЩ dizinleme kitaplЩПЩdЩr. C uygulamalarЩ yazЩp
-basit ve etkin bir Чekilde veri tabanЩna ulaЧmak isteyenler iГin
-yararlЩ olacaktЩr.
+%description -l tr.UTF-8
+gdbm bir veri tabanд╠ dizinleme kitaplд╠д÷д╠dд╠r. C uygulamalarд╠ yazд╠p
+basit ve etkin bir е÷ekilde veri tabanд╠na ulaе÷mak isteyenler iц╖in
+yararlд╠ olacaktд╠r.
 
-%description -l ru
-Это библиотека для работы с индексированной базой данных. Полезна для
-тех, кто разрабатывает программы на C и кому нужен доступ к простой и
-эффективной базе данных либо требуется написать программу, которая ее
-использует.
+%description -l ru.UTF-8
+п╜я┌п╬ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╟ п╢п╩я▐ я─п╟п╠п╬я┌я▀ я│ п╦п╫п╢п╣п╨я│п╦я─п╬п╡п╟п╫п╫п╬п╧ п╠п╟п╥п╬п╧ п╢п╟п╫п╫я▀я┘. п÷п╬п╩п╣п╥п╫п╟ п╢п╩я▐
+я┌п╣я┘, п╨я┌п╬ я─п╟п╥я─п╟п╠п╟я┌я▀п╡п╟п╣я┌ п©я─п╬пЁя─п╟п╪п╪я▀ п╫п╟ C п╦ п╨п╬п╪я┐ п╫я┐п╤п╣п╫ п╢п╬я│я┌я┐п© п╨ п©я─п╬я│я┌п╬п╧ п╦
+я█я└я└п╣п╨я┌п╦п╡п╫п╬п╧ п╠п╟п╥п╣ п╢п╟п╫п╫я▀я┘ п╩п╦п╠п╬ я┌я─п╣п╠я┐п╣я┌я│я▐ п╫п╟п©п╦я│п╟я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐, п╨п╬я┌п╬я─п╟я▐ п╣п╣
+п╦я│п©п╬п╩я▄п╥я┐п╣я┌.
 
-%description -l uk
-Це б╕бл╕отека для роботи з ╕ндексованою базою даних. Корисна для тих,
-хто розробля╓ програми на C ╕ кому потр╕бен доступ до просто╖ та
-ефективно╖ бази даних або потр╕бно написати програму, що ╖╖
-використову╓.
+%description -l uk.UTF-8
+п╕п╣ п╠я√п╠п╩я√п╬я┌п╣п╨п╟ п╢п╩я▐ я─п╬п╠п╬я┌п╦ п╥ я√п╫п╢п╣п╨я│п╬п╡п╟п╫п╬я▌ п╠п╟п╥п╬я▌ п╢п╟п╫п╦я┘. п п╬я─п╦я│п╫п╟ п╢п╩я▐ я┌п╦я┘,
+я┘я┌п╬ я─п╬п╥я─п╬п╠п╩я▐я■ п©я─п╬пЁя─п╟п╪п╦ п╫п╟ C я√ п╨п╬п╪я┐ п©п╬я┌я─я√п╠п╣п╫ п╢п╬я│я┌я┐п© п╢п╬ п©я─п╬я│я┌п╬я≈ я┌п╟
+п╣я└п╣п╨я┌п╦п╡п╫п╬я≈ п╠п╟п╥п╦ п╢п╟п╫п╦я┘ п╟п╠п╬ п©п╬я┌я─я√п╠п╫п╬ п╫п╟п©п╦я│п╟я┌п╦ п©я─п╬пЁя─п╟п╪я┐, я┴п╬ я≈я≈
+п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я■.
 
 %package devel
 Summary:	development libraries and header files for gdbm
-Summary(de):	Entwicklungs-Libraries und Header-Dateien fЭr gdbm
-Summary(fr):	BibliothХques de dИveloppement et en-tЙtes pour gdbm
-Summary(pl):	Biblioteki i pliki nagЁСwkowe dla gdbm
-Summary(ru):	Библиотека и хедеры gdbm для разработчиков
-Summary(tr):	gdbm iГin baЧlЩk dosyalarЩ ve geliЧtirme kitaplЩklarЩ
-Summary(uk):	Б╕бл╕отека та хедери gdbm для програм╕ст╕в
+Summary(de.UTF-8):   Entwicklungs-Libraries und Header-Dateien fц╪r gdbm
+Summary(fr.UTF-8):   Bibliothц╗ques de dц╘veloppement et en-tц╙tes pour gdbm
+Summary(pl.UTF-8):   Biblioteki i pliki nagе┌цЁwkowe dla gdbm
+Summary(ru.UTF-8):   п▒п╦п╠п╩п╦п╬я┌п╣п╨п╟ п╦ я┘п╣п╢п╣я─я▀ gdbm п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌я┤п╦п╨п╬п╡
+Summary(tr.UTF-8):   gdbm iц╖in baе÷lд╠k dosyalarд╠ ve geliе÷tirme kitaplд╠klarд╠
+Summary(uk.UTF-8):   п▒я√п╠п╩я√п╬я┌п╣п╨п╟ я┌п╟ я┘п╣п╢п╣я─п╦ gdbm п╢п╩я▐ п©я─п╬пЁя─п╟п╪я√я│я┌я√п╡
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	libgdbm2-devel
@@ -80,52 +80,52 @@ These are the development libraries and header files for gdbm, the GNU
 database system. These are required if you plan to do development
 using the gdbm database.
 
-%description devel -l de
-Dies sind die Entwicklungs-Libraries und Header-Dateien fЭr gdbm, das
+%description devel -l de.UTF-8
+Dies sind die Entwicklungs-Libraries und Header-Dateien fц╪r gdbm, das
 GNU-Datenbanksystem. Sie sind darauf angewiesen, wenn Sie vorhaben,
-die gdbm-Datenbank fЭr Entwicklungsarbeiten zu benutzen.
+die gdbm-Datenbank fц╪r Entwicklungsarbeiten zu benutzen.
 
-%description devel -l fr
-Ce sont les librairies de dИveloppement et les fichiers d'en-tЙte pour
-gdbm, le systХme de base de donnИes GNU. Ceci est nИcessaire si vous
-dИsirez dИvelopper en utilisant la base de donnИes gdbm.
+%description devel -l fr.UTF-8
+Ce sont les librairies de dц╘veloppement et les fichiers d'en-tц╙te pour
+gdbm, le systц╗me de base de donnц╘es GNU. Ceci est nц╘cessaire si vous
+dц╘sirez dц╘velopper en utilisant la base de donnц╘es gdbm.
 
-%description devel -l pl
-W pakiecie tym znajduj╠ siЙ pliki nagЁСwkowe i biblioteki dla systemu
+%description devel -l pl.UTF-8
+W pakiecie tym znajdujд┘ siд≥ pliki nagе┌цЁwkowe i biblioteki dla systemu
 bazy danych GNU.
 
-%description devel -l tr
-GNU veri tabanЩ sistemi gdbm ile program geliЧtirmek iГin gereken
-baЧlЩk dosyalarЩ ve kitaplЩklar.
+%description devel -l tr.UTF-8
+GNU veri tabanд╠ sistemi gdbm ile program geliе÷tirmek iц╖in gereken
+baе÷lд╠k dosyalarд╠ ve kitaplд╠klar.
 
-%description devel -l ru
-Это библиотека для разработчиков и хедеры gdbm, базы данных GNU. Они
-нужны, если вы собираетесь разрабатывать программы с использованием
+%description devel -l ru.UTF-8
+п╜я┌п╬ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╟ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌я┤п╦п╨п╬п╡ п╦ я┘п╣п╢п╣я─я▀ gdbm, п╠п╟п╥я▀ п╢п╟п╫п╫я▀я┘ GNU. п·п╫п╦
+п╫я┐п╤п╫я▀, п╣я│п╩п╦ п╡я▀ я│п╬п╠п╦я─п╟п╣я┌п╣я│я▄ я─п╟п╥я─п╟п╠п╟я┌я▀п╡п╟я┌я▄ п©я─п╬пЁя─п╟п╪п╪я▀ я│ п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣п╪
 gdbm.
 
-%description devel -l uk
-Це б╕бл╕отека для програм╕ст╕в та хедери gdbm, бази даних GNU. Вони
-потр╕бн╕, якщо ви збира╓тесь розробляти програми з використанням gdbm.
+%description devel -l uk.UTF-8
+п╕п╣ п╠я√п╠п╩я√п╬я┌п╣п╨п╟ п╢п╩я▐ п©я─п╬пЁя─п╟п╪я√я│я┌я√п╡ я┌п╟ я┘п╣п╢п╣я─п╦ gdbm, п╠п╟п╥п╦ п╢п╟п╫п╦я┘ GNU. п▓п╬п╫п╦
+п©п╬я┌я─я√п╠п╫я√, я▐п╨я┴п╬ п╡п╦ п╥п╠п╦я─п╟я■я┌п╣я│я▄ я─п╬п╥я─п╬п╠п╩я▐я┌п╦ п©я─п╬пЁя─п╟п╪п╦ п╥ п╡п╦п╨п╬я─п╦я│я┌п╟п╫п╫я▐п╪ gdbm.
 
 %package static
 Summary:	Static gdbm library
-Summary(pl):	Biblioteki statyczne gdbm
-Summary(ru):	Статическая библиотека gdbm
-Summary(uk):	Статична б╕бл╕отека gdbm
+Summary(pl.UTF-8):   Biblioteki statyczne gdbm
+Summary(ru.UTF-8):   п║я┌п╟я┌п╦я┤п╣я│п╨п╟я▐ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╟ gdbm
+Summary(uk.UTF-8):   п║я┌п╟я┌п╦я┤п╫п╟ п╠я√п╠п╩я√п╬я┌п╣п╨п╟ gdbm
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static gdbm library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna gdbm.
 
-%description static -l ru
-Это статическая библиотека gdbm, базы данных GNU.
+%description static -l ru.UTF-8
+п╜я┌п╬ я│я┌п╟я┌п╦я┤п╣я│п╨п╟я▐ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╟ gdbm, п╠п╟п╥я▀ п╢п╟п╫п╫я▀я┘ GNU.
 
-%description static -l uk
-Це статична б╕бл╕отека gdbm, бази даних GNU.
+%description static -l uk.UTF-8
+п╕п╣ я│я┌п╟я┌п╦я┤п╫п╟ п╠я√п╠п╩я√п╬я┌п╣п╨п╟ gdbm, п╠п╟п╥п╦ п╢п╟п╫п╦я┘ GNU.
 
 %prep
 %setup  -q
