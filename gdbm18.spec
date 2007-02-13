@@ -1,9 +1,9 @@
 Summary:	GNU database library for C
-Summary(de.UTF-8):   GNU-Datenbank-Library für C
-Summary(fr.UTF-8):   La librairie GNU de bases de données pout le langage C
-Summary(pl.UTF-8):   Biblioteka GNU bazy danych dla języka C
-Summary(ru.UTF-8):   Библиотека базы данных GNU для C
-Summary(uk.UTF-8):   Бібліотека бази даних GNU для C
+Summary(de.UTF-8):	GNU-Datenbank-Library für C
+Summary(fr.UTF-8):	La librairie GNU de bases de données pout le langage C
+Summary(pl.UTF-8):	Biblioteka GNU bazy danych dla języka C
+Summary(ru.UTF-8):	Библиотека базы данных GNU для C
+Summary(uk.UTF-8):	Бібліотека бази даних GNU для C
 Name:		gdbm
 Version:	1.8.3
 Release:	7
@@ -65,12 +65,12 @@ yararlı olacaktır.
 
 %package devel
 Summary:	development libraries and header files for gdbm
-Summary(de.UTF-8):   Entwicklungs-Libraries und Header-Dateien für gdbm
-Summary(fr.UTF-8):   Bibliothèques de développement et en-têtes pour gdbm
-Summary(pl.UTF-8):   Biblioteki i pliki nagłówkowe dla gdbm
-Summary(ru.UTF-8):   Библиотека и хедеры gdbm для разработчиков
-Summary(tr.UTF-8):   gdbm için başlık dosyaları ve geliştirme kitaplıkları
-Summary(uk.UTF-8):   Бібліотека та хедери gdbm для програмістів
+Summary(de.UTF-8):	Entwicklungs-Libraries und Header-Dateien für gdbm
+Summary(fr.UTF-8):	Bibliothèques de développement et en-têtes pour gdbm
+Summary(pl.UTF-8):	Biblioteki i pliki nagłówkowe dla gdbm
+Summary(ru.UTF-8):	Библиотека и хедеры gdbm для разработчиков
+Summary(tr.UTF-8):	gdbm için başlık dosyaları ve geliştirme kitaplıkları
+Summary(uk.UTF-8):	Бібліотека та хедери gdbm для програмістів
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	libgdbm2-devel
@@ -109,9 +109,9 @@ gdbm.
 
 %package static
 Summary:	Static gdbm library
-Summary(pl.UTF-8):   Biblioteki statyczne gdbm
-Summary(ru.UTF-8):   Статическая библиотека gdbm
-Summary(uk.UTF-8):   Статична бібліотека gdbm
+Summary(pl.UTF-8):	Biblioteki statyczne gdbm
+Summary(ru.UTF-8):	Статическая библиотека gdbm
+Summary(uk.UTF-8):	Статична бібліотека gdbm
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
