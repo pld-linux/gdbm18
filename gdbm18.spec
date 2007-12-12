@@ -141,12 +141,12 @@ Biblioteka statyczna gdbm.
 %{__autoconf}
 %configure
 
-%{__make}
+%{__make} -j1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install install-compat \
+%{__make} -j1 install install-compat \
 	INSTALL_ROOT=$RPM_BUILD_ROOT \
 	BINOWN=`id -u` BINGRP=`id -g`
 
