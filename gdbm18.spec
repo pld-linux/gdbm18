@@ -15,6 +15,7 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-jbj.patch
 Patch2:		%{name}-linking.patch
 Patch3:		%{name}-link-compat.patch
+Patch4:		%{name}-make-jN.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -133,6 +134,7 @@ Biblioteka statyczna gdbm.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 %{__libtoolize}
@@ -141,7 +143,7 @@ Biblioteka statyczna gdbm.
 %{__autoconf}
 %configure
 
-%{__make} -j1
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
