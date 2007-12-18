@@ -1,0 +1,11 @@
+--- gdbm-1.8.3/Makefile.in~	2007-12-18 23:27:16.000000000 +0100
++++ gdbm-1.8.3/Makefile.in	2007-12-18 23:31:52.750925500 +0100
+@@ -158,7 +158,7 @@
+ 	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libgdbm.la -rpath $(libdir) \
+ 		-version-info $(SHLIB_VER) $(LOBJS)
+ 
+-libgdbm_compat.la: $(C_LOBJS) gdbm.h
++libgdbm_compat.la: $(C_LOBJS) gdbm.h libgdbm.la
+ 	rm -f libgdbm_compat.la
+ 	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libgdbm_compat.la -rpath $(libdir) \
+ 		-version-info $(SHLIB_VER) $(C_LOBJS) libgdbm.la
